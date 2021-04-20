@@ -7,9 +7,8 @@ const activitySchema = new Schema ({
     activityFinish: {type: Date, required: true},
     distance: {type: Number, required: true},
     activityType: {type: Boolean, required: true}, //false - running, true - riding
-}, {
-    timestamps: true,
 });
+    //timestamps: true
 
 const Activity = mongoose.model('Activity', activitySchema);
 

@@ -1,6 +1,4 @@
-const {Router} = require('express')
-const router = Router()
-//const router = require('express').Router();
+const router = require('express').Router();
 const Activity = require('../models/activity.model');
 
 router.route('/').get((req, res) => {
@@ -13,7 +11,7 @@ router.route('/').post((req, res) => {
     const activityStart = Date.parse(req.body.activityStart);
     const activityFinish = Date.parse(req.body.activityFinish);
     const distance = Number(req.body.distance);
-    const activityType = Boolean(req.body.activityType);
+    const activityType = req.body.activityType;
 
     const newActivity = new Activity({
         activityStart,
