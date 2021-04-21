@@ -62,9 +62,9 @@ export default class Form extends Component {
         console.log (activity)
         this.setState(this.baseState);
        axios.post('http://localhost:5000/', activity)
-            .then(res => console.log(res.data));
+            .then (res => console.log(res.data))
        //  window.location.reload(true);
-       // alert('Send to database..')
+
 
     }
 

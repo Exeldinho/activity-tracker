@@ -14,13 +14,12 @@ class App extends React.Component {
             <header>Activity tracker</header>
                 <Form/>
                 <RecentActivities/>
+                <Achievements/>
             </div>
         );
     }
 }
 
-
-//<Achievements/>
 //<Totals/>
 
 export default App;

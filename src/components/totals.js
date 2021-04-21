@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import moment from "moment";
 
 export default class Totals extends Component {
     render() {
