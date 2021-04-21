@@ -13,13 +13,13 @@ class App extends React.Component {
             <div className="container">
             <header>Activity tracker</header>
                 <Form/>
-
+                <RecentActivities/>
             </div>
         );
     }
 }
 
-//<RecentActivities/>
+
 //<Achievements/>
 //<Totals/>
 

@@ -6,7 +6,7 @@ const activitySchema = new Schema ({
     activityStart: {type: Date, required: true},
     activityFinish: {type: Date, required: true},
     distance: {type: Number, required: true},
-    activityType: {type: Boolean, required: true}, //false - running, true - riding
+    activityType: {type: String, required: true},
 });
     //timestamps: true
 

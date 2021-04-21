@@ -1,6 +1,7 @@
-import React, {Component} from 'react';
+import React, {useState, useEffect, Component} from 'react';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
+import axios from 'axios';
 
 export default class Form extends Component {
     constructor(props) {
@@ -18,13 +19,14 @@ export default class Form extends Component {
             distance: '',
             activityType: ''
         }
+        this.baseState = this.state;
     }
 
-    componentDidMount() {
-        this.setState({
-            activityType: ['true']
-        })
-    }
+    //componentDidMount() {
+    //   this.setState({
+     //       activityType: ['true']
+   //     })
+   // }
 
     onChangeActivityStart (date) {
         this.setState({
@@ -58,8 +60,12 @@ export default class Form extends Component {
             activityType: this.state.activityType
         }
         console.log (activity)
+        this.setState(this.baseState);
+       // axios.post('http://localhost:5000/', activity)
+       //     .then(res => console.log(res.data));
+       //  window.location.reload(true);
+       // alert('Send to database..')
 
-       // window.location = '/';
     }
 
     render() {
@@ -74,9 +80,8 @@ export default class Form extends Component {
                         onChange={this.onChangeActivityStart}
                         placeholderText={"Start time"}
                         showTimeSelect
-                      //  timeFormat="HH:mm"
                         timeIntervals={1}
-                        dateFormat="HH:mm" //DD/MM/YYYY HH:mm:ss d MMM Y HH:mm
+                        dateFormat="HH:mm"
                     />
                     </span>
 
@@ -103,11 +108,12 @@ export default class Form extends Component {
                     </span>
 
                     <span className="form-group">
-                        <select
-                            placeholder="Select activity type"
-                            required
+                        <select onChange={this.onChangeActivityType}>>
+                            <option selected disabled>Select activity type</option>
+                            <option value="Run">Run</option>
+                            <option value="Ride">Ride</option>
                             value={this.state.activityType}
-                            onChange={this.onChangeActivityType}>
+                            required
                         </select>
                     </span>
 
