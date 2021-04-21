@@ -1,19 +1,28 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
-import axios from "axios";
+import axios from 'axios';
+import moment from 'moment';
 
 const Activity = props => (
     <tr>
-        <td>{props.activity.activityStart}</td>
+        <td>
+            {moment(props.activity.activityStart).format('MMMM DD')}
+        </td>
         <td>{props.activity.activityType}</td>
         <td>{props.activity.distance} km</td>
-        <td>minutes</td>
-        <td>km/hour</td>
+        <td>{activityDetails(props.activity.activityStart, props.activity.activityFinish).activityDuration} minutes</td>
+        <td>{activityDetails(props.activity.activityStart, props.activity.activityFinish, props.activity.distance).activitySpeed} km / hour</td>
     </tr>
 )
-
-
-
+function activityDetails(timeStart, timeFinish, distance) {
+    let admission = moment(timeStart, 'DD-MM-YYYY HH:mm');
+    let discharge = moment(timeFinish, 'DD-MM-YYYY HH:mm');
+    let duration = (discharge.diff(admission, 'minutes'))
+    return {
+        activityDuration: duration,
+        activitySpeed: (distance/(duration/60)).toFixed(1),
+    };
+};
 
 
 export default class RecentActivities extends Component {
@@ -42,7 +51,6 @@ export default class RecentActivities extends Component {
         return (
             <div className="recentActivities">
             <table className="table">
-
                 <tbody>
                 {this.activityList()}
                 </tbody>
