@@ -32,14 +32,14 @@ export default class Totals extends Component {
     render() {
         return (
             <div className="totals">
-                <table className="table">
+                <table class="table">
                     <tbody>
                     <tr>
-                        <td>Total ride distance:</td>
+                        <td><b>Total ride distance:</b></td>
                         <td>{this.activityRecords("Ride")} km</td>
                     </tr>
                     <tr>
-                        <td>Total run distance:</td>
+                        <td><b>Total run distance:</b></td>
                         <td>{this.activityRecords("Run")} km</td>
                     </tr>
                     </tbody>

@@ -72,10 +72,12 @@ export default class Form extends Component {
         return (
             <div className="form">
                 <form onSubmit={this.onSubmit}>
+                    <div class="form-inline">
 
-                    <span className="form-group">
-                    <label>Add new activity:</label>
-                    <DatePicker className="form-group"
+                        <label>Add new activity:</label>
+
+                    <div class="col-auto">
+                        <DatePicker className="form-group"
                         selected={this.state.activityStart}
                         onChange={this.onChangeActivityStart}
                         placeholderText={"Start time"}
@@ -83,9 +85,9 @@ export default class Form extends Component {
                         timeIntervals={1}
                         dateFormat="HH:mm"
                     />
-                    </span>
+                    </div>
 
-                    <span className="form-group">
+                    <div class="col-auto">
                     <DatePicker className="form-group"
                         selected={this.state.activityFinish}
                         onChange={this.onChangeActivityFinish}
@@ -95,19 +97,19 @@ export default class Form extends Component {
                         timeIntervals={1}
                         dateFormat="HH:mm" //DD/MM/YYYY HH:mm:ss d MMM Y HH:mm
                     />
-                    </span>
+                    </div>
 
-                    <span className="form-group">
+                    <span class="col-auto">
                         <input
                             type="text"
-                            className="form-control"
+                            class="form-control"
                             value={this.state.distance}
                             onChange={this.onChangeDistance}
                             placeholder="Distance"
-                        />
+                            required                        />
                     </span>
 
-                    <span className="form-group">
+                    <span class="col-auto">
                         <select onChange={this.onChangeActivityType}>>
                             <option selected disabled>Select activity type</option>
                             <option value="Run">Run</option>
@@ -117,14 +119,14 @@ export default class Form extends Component {
                         </select>
                     </span>
 
-                    <span className="form-group">
+                    <span class="col-auto">
                         <input
                             type="submit"
                             value="Save"
-                            className="button"
+                            class="btn btn-primary"
                             />
                     </span>
-
+                    </div>
                 </form>
             </div>
         )

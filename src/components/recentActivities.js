@@ -1,13 +1,10 @@
 import React, {Component} from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 import moment from 'moment';
 
 const Activity = props => (
     <tr>
-        <td>
-            {moment(props.activity.activityStart).format('MMMM DD')}
-        </td>
+        <td>{moment(props.activity.activityStart).format('MMMM DD')}</td>
         <td>{props.activity.activityType}</td>
         <td>{props.activity.distance} km</td>
         <td>{activityDetails(props.activity.activityStart, props.activity.activityFinish).activityDuration} minutes</td>
@@ -50,7 +47,7 @@ export default class RecentActivities extends Component {
     render() {
         return (
             <div className="recentActivities">
-            <table className="table">
+            <table class="table">
                 <tbody>
                 {this.activityList()}
                 </tbody>
