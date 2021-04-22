@@ -15,11 +15,11 @@ class App extends React.Component {
                 <Form/>
                 <RecentActivities/>
                 <Achievements/>
+                <Totals/>
             </div>
         );
     }
 }
 
-//<Totals/>
 
 export default App;
