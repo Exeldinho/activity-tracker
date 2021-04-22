@@ -12,13 +12,24 @@ export default class Totals extends Component {
         axios.get('http://localhost:5000/')
             .then(response => {
                 this.setState({activities: response.data})
-                console.log({activities: response.data})
             })
             .catch((error) => {
                 console.log(error);
             })
     }
 
+    componentDidUpdate(prevProps) {
+        if (prevProps.updateChild !== this.props.updateChild) {
+            axios.get('http://localhost:5000/')
+                .then(response => {
+                    this.setState({activities: response.data})
+
+                })
+                .catch((error) => {
+                    console.log(error);
+                })
+        }
+    };
     activityRecords(activityType) {
         let total = 0;
         this.state.activities.forEach(activity => {
@@ -35,11 +46,11 @@ export default class Totals extends Component {
                 <table class="table">
                     <tbody>
                     <tr>
-                        <td><b>Total ride distance:</b></td>
+                        <td>Total ride distance:</td>
                         <td>{this.activityRecords("Ride")} km</td>
                     </tr>
                     <tr>
-                        <td><b>Total run distance:</b></td>
+                        <td>Total run distance:</td>
                         <td>{this.activityRecords("Run")} km</td>
                     </tr>
                     </tbody>

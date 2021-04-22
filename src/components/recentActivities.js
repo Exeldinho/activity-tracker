@@ -11,7 +11,8 @@ const Activity = props => (
         <td>{activityDetails(props.activity.activityStart, props.activity.activityFinish, props.activity.distance).activitySpeed} km / hour</td>
     </tr>
 )
-function activityDetails(timeStart, timeFinish, distance) {
+export function activityDetails(timeStart, timeFinish, distance) {
+
     let admission = moment(timeStart, 'DD-MM-YYYY HH:mm');
     let discharge = moment(timeFinish, 'DD-MM-YYYY HH:mm');
     let duration = (discharge.diff(admission, 'minutes'))
@@ -26,7 +27,7 @@ export default class RecentActivities extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {activities: []};
+        this.state = { activities: []};
     }
 
     componentDidMount() {
@@ -34,10 +35,25 @@ export default class RecentActivities extends Component {
             .then (response => {
                 this.setState ({activities: response.data})
             })
+
             .catch((error) => {
                 console.log(error);
             })
     }
+
+    componentDidUpdate(prevProps) {
+        if (prevProps.updateChild !== this.props.updateChild) {
+            axios.get('http://localhost:5000/')
+                .then(response => {
+                    this.setState({activities: response.data})
+
+                })
+                .catch((error) => {
+                    console.log(error);
+                })
+        }
+    };
+
     activityList(){
         return this.state.activities.map(currentactivity => {
             return <Activity activity={currentactivity} key={currentactivity._id}/>;
