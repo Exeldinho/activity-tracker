@@ -6,8 +6,8 @@ import Form from './components/form';
 class App extends React.Component {
     render() {
         return (
-            <div class="container">
-            <header>Activity tracker</header>
+            <div className="container">
+            <header className="align-middle" >Activity tracker</header>
                 <Form/>
             </div>
         );

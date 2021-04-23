@@ -1,83 +1,85 @@
-.App {
-  text-align: center;
-}
-
-
-
-header {
-  height: 50px;
-  font-color: #666666;
-  font-weight: bold;
-  background-color: #8eb4e8;
-  border-radius: 8px;
-  border-width: thin;
-  border-color: black;
+.align-middle {
   display: flex;
+  color: #252a2a;
+  font-weight: bold;
+  font-size: 28px;
+  background-color: #cae9fd;
+  border-radius: 8px;
   align-items: center;
   justify-content: center;
-  margin: 5px;
-  padding: 0;
+  margin-top: 5px;
+  height: 80px;
+  border: 1px #8a96a7 double;
 }
 
 .form-inline {
-  height: 50px;
-  font-size: 10px;
+  font-size: 16px;
   font-weight: bold;
-  background-color: #c2eec0;
+  background-color: #ebfef2;
   border-radius: 8px;
-  border-width: thin;
-  border-color: black;
   display: flex;
   align-items: center;
-  justify-content: left;
-  margin: 5px;
-  padding: 0;
-}
-
-input {
-  font-size: 10px;
-  border-width: thin;
-  border-radius: 3px;
-  height: 20px;
-  width: 60px;
-  text-align: center;
-  margin: 3px ;
-}
-.form-group select {
-  font-size: 10px;
-  border-width: thin;
-  border-radius: 3px;
-  height: 23px;
-  width: 130px;
-  text-align: center;
-  margin: 3px ;
-}
-
-.btn {
-  text-align: center;
   justify-content: center;
-  font-size: 10px;
+  margin-top: 10px;
+  padding: 10px;
+  height: 80px;
+  border: 1px #8a96a7 double;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+  background-color: #49525d !important;
+  height: 30px !important;
+  width: 140px !important;
+  font-size: 11px !important;
+  justify-content: center;
+  border: 1px #343d4f !important;
+}
+
+
+.form-group {
+  font-size: 14px;
   border-width: thin;
   border-radius: 3px;
-  height: 23px;
-  width: 100px;
-  color: rgba(255, 255, 255, 0.82);
+  height: 30px;
+  width: 80px;
+  margin: 3px ;
+}
 
-  margin: 10px ;
-  background-color: #485353;
+select.form-group {
+  width: 180px;
+}
+
+input.form-group {
+  width: 120px;
 }
 
 .table {
-  border-spacing: 0 20px !important;
-  border-collapse: collapse !important;
-  font-size: 10px;
-  background-color: #fde6db;
-  border-radius: 3px;
+  display: table;
+  text-align: center;
+  font-size: 14px;
+  background-color: #fdf0e9;
+  margin-top: 20px;
+}
+.table_header {
+  font-weight: bold;
+}
+
+.recentActivities .table tbody td {
+  border-bottom: 10px solid white;
+  border-radius: 5px;
+  vertical-align:bottom;
+
+}
+
+.Achievements table {
+  background-color: #fcecec;
+  border-radius: 10px;
 }
 
 .totals table {
-  font-size: 10px;
-  background-color: #c1c3e5;
+  background-color: #f1ebfd;
+  border-radius: 10px;
+
 }
 
 

@@ -27,7 +27,7 @@ export default class Form extends Component {
 
 
 componentDidMount() {
-     this.setState ({ updateChild: false})}
+        this.setState ({ updateChild: false})}
 
 
         onChangeActivityStart (date) {
@@ -81,64 +81,70 @@ componentDidMount() {
             return (
                 <div className="form">
                     <form onSubmit={this.onSubmit}>
-                        <div class="form-inline">
+                        <div className="form-inline">
 
                             <label>Add new activity:</label>
 
-                            <div class="col-auto">
+                            <div className="col-auto">
+
                                 <DatePicker className="form-group"
+                                            type="date"
                                             selected={this.state.activityStart}
                                             onChange={this.onChangeActivityStart}
                                             placeholderText={"Start time"}
                                             showTimeSelect
+                                            showTimeSelectOnly
                                             timeIntervals={1}
                                             dateFormat="HH:mm"
                                 />
                             </div>
 
-                            <div class="col-auto">
+                            <div className="col-auto">
                                 <DatePicker className="form-group"
                                             selected={this.state.activityFinish}
                                             onChange={this.onChangeActivityFinish}
                                             placeholderText="Finish time"
                                             showTimeSelect
+                                            showTimeSelectOnly
                                             timeIntervals={1}
                                             dateFormat="HH:mm"
                                 />
                             </div>
 
-                            <span class="col-auto">
+                            <div className="col-auto">
                         <input
                             type="text"
-                            class="form-control"
+                            size="5"
+                            className="form-group"
                             value={this.state.distance}
                             onChange={this.onChangeDistance}
                             placeholder="Distance"
                             required
                         />
-                    </span>
+                    </div>
 
-                            <span class="col-auto">
-                        <select onChange={this.onChangeActivityType}>>
-                            <option value='1' selected disabled>Select activity type</option>
+                            <div className="col-auto">
+                        <select className = "form-group" onChange={this.onChangeActivityType}>>
+                            <option selected disabled>Select activity type</option>
                             <option value="Run">Run</option>
                             <option value="Ride">Ride</option>
+                            type="text"
                             value={this.state.activityType}
                             required
                         </select>
-                    </span>
+                    </div>
 
-                            <span class="col-auto">
+                            <div className="col-auto">
                         <input
                             type="submit"
                             value="Save"
-                            class="btn btn-primary"
+                            className="btn btn-primary form-group"
                         />
-                    </span>
+                    </div>
                         </div>
                     </form>
                     <div className="row">
-                        <div class="col-md-8">
+                        <div className="col-md-8">
                             <RecentActivities updateChild={this.state.updateChild}/>
                         </div>
                         <div className="col-md-4">
