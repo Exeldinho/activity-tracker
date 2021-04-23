@@ -18,7 +18,7 @@ const Activity = props => (
 
 export default class Achievements extends Component {
     constructor(props) {
-        super(props);
+        super(props)
         this.state = {activities: []}
     }
 
@@ -46,7 +46,7 @@ export default class Achievements extends Component {
     }
 
     activityRecords(activityType) {
-        let max = 0;
+        let max = 0
         this.state.activities.forEach(activity => {
             if (activity.distance > max && activity.activityType === activityType) {
                 max = activity.distance

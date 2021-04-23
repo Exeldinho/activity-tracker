@@ -32,7 +32,7 @@ export default class Totals extends Component {
     }
 
     activityRecords(activityType) {
-        let total = 0;
+        let total = 0
         this.state.activities.forEach(activity => {
             if (activity.activityType === activityType) {
                 total += activity.distance

@@ -22,15 +22,15 @@ export function activityDetails(timeStart, timeFinish, distance) {
 }
 
 function timeConvert(min) {
-      const num = min;
-      const hours = (num / 60);
-      const roundHours = Math.floor(hours);
-      const minutes = (hours - roundHours) * 60;
-      const roundMinutes = Math.round(minutes);
+      const num = min
+      const hours = (num / 60)
+      const roundHours = Math.floor(hours)
+      const minutes = (hours - roundHours) * 60
+      const roundMinutes = Math.round(minutes)
       if (num >= 60 ) {
-          return +roundHours + " h " + roundMinutes + " m";
+          return +roundHours + " h " + roundMinutes + " m"
         }
-      return roundMinutes + " minutes";
+      return roundMinutes + " minutes"
     }
 
 export default class RecentActivities extends Component {
