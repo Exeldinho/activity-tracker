@@ -37,7 +37,6 @@ export default class Achievements extends Component {
             axios.get('http://localhost:5000/')
                 .then(response => {
                     this.setState({activities: response.data})
-
                 })
                 .catch((error) => {
                     console.log(error)
@@ -62,8 +61,8 @@ export default class Achievements extends Component {
         return (
             <div className="Achievements">
                     <table className="table table-borderless">
-                    {this.activityRecords("Ride")}
-                    {this.activityRecords("Run")}
+                        {this.activityRecords("Ride")}
+                        {this.activityRecords("Run")}
                     </table>
             </div>
         )

@@ -23,7 +23,6 @@ export default class Totals extends Component {
             axios.get('http://localhost:5000/')
                 .then(response => {
                     this.setState({activities: response.data})
-
                 })
                 .catch((error) => {
                     console.log(error)
@@ -46,14 +45,14 @@ export default class Totals extends Component {
             <div className="totals">
                 <table className="table table-borderless">
                     <tbody>
-                    <tr>
-                        <td className="table_header">Total ride distance:</td>
-                        <td>{this.activityRecords("Ride")} km</td>
-                    </tr>
-                    <tr>
-                        <td className="table_header"> Total run distance:</td>
-                        <td>{this.activityRecords("Run")} km</td>
-                    </tr>
+                        <tr>
+                            <td className="table_header">Total ride distance:</td>
+                            <td>{this.activityRecords("Ride")} km</td>
+                        </tr>
+                        <tr>
+                            <td className="table_header"> Total run distance:</td>
+                            <td>{this.activityRecords("Run")} km</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>

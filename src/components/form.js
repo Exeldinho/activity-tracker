@@ -26,7 +26,9 @@ export default class Form extends Component {
     }
 
         componentDidMount() {
-            this.setState ({ updateChild: false})
+            this.setState ({
+                updateChild: false
+            })
         }
 
         onChangeActivityStart (date) {
@@ -88,59 +90,59 @@ export default class Form extends Component {
                             <div className="col-auto">
 
                                 <DatePicker className="form-group"
-                                            type="date"
-                                            selected={this.state.activityStart}
-                                            onChange={this.onChangeActivityStart}
-                                            placeholderText={"Start time"}
-                                            showTimeSelect
-                                            showTimeSelectOnly
-                                            timeIntervals={1}
-                                            dateFormat="HH:mm"
+                                    type="date"
+                                    selected={this.state.activityStart}
+                                    onChange={this.onChangeActivityStart}
+                                    placeholderText={"Start time"}
+                                    showTimeSelect
+                                    showTimeSelectOnly
+                                    timeIntervals={1}
+                                    dateFormat="HH:mm"
                                 />
                             </div>
 
                             <div className="col-auto">
                                 <DatePicker className="form-group"
-                                            selected={this.state.activityFinish}
-                                            onChange={this.onChangeActivityFinish}
-                                            placeholderText="Finish time"
-                                            showTimeSelect
-                                            showTimeSelectOnly
-                                            timeIntervals={1}
-                                            dateFormat="HH:mm"
+                                    selected={this.state.activityFinish}
+                                    onChange={this.onChangeActivityFinish}
+                                    placeholderText="Finish time"
+                                    showTimeSelect
+                                    showTimeSelectOnly
+                                    timeIntervals={1}
+                                    dateFormat="HH:mm"
                                 />
                             </div>
 
                             <div className="col-auto">
-                        <input
-                            type="text"
-                            size="5"
-                            className="form-group"
-                            value={this.state.distance}
-                            onChange={this.onChangeDistance}
-                            placeholder="Distance"
-                            required
-                        />
-                    </div>
+                                <input
+                                    type="text"
+                                    size="5"
+                                    className="form-group"
+                                    value={this.state.distance}
+                                    onChange={this.onChangeDistance}
+                                    placeholder="Distance"
+                                    required
+                                />
+                            </div>
 
                             <div className="col-auto">
-                        <select className = "form-group" onChange={this.onChangeActivityType}>>
-                            <option selected disabled>Select activity type</option>
-                            <option value="Run">Run</option>
-                            <option value="Ride">Ride</option>
-                            type="text"
-                            value={this.state.activityType}
-                            required
-                        </select>
-                    </div>
+                                <select className = "form-group" onChange={this.onChangeActivityType}>
+                                    <option selected disabled>Select activity type</option>
+                                    <option value="Run">Run</option>
+                                    <option value="Ride">Ride</option>
+                                    type="text"
+                                    value={this.state.activityType}
+                                    required
+                                </select>
+                           </div>
 
                             <div className="col-auto">
-                        <input
-                            type="submit"
-                            value="Save"
-                            className="btn btn-primary form-group"
-                        />
-                    </div>
+                                <input
+                                    type="submit"
+                                    value="Save"
+                                    className="btn btn-primary form-group"
+                                />
+                            </div>
                         </div>
                     </form>
                     <div className="row">

@@ -45,7 +45,6 @@ export default class RecentActivities extends Component {
             .then (response => {
                 this.setState ({activities: response.data})
             })
-
             .catch((error) => {
                 console.log(error)
             })
@@ -67,18 +66,18 @@ export default class RecentActivities extends Component {
     activityList(){
         const reverseList = [...this.state.activities].reverse()
         return reverseList.map(currentActivity => {
-            return <Activity activity={currentActivity} key={currentActivity._id}/>;
+            return <Activity activity={currentActivity} key={currentActivity._id}/>
         })
     }
 
     render() {
         return (
             <div className="recentActivities">
-            <table className="table table-borderless">
-                <tbody>
-                    {this.activityList()}
-                </tbody>
-            </table>
+                <table className="table table-borderless">
+                    <tbody>
+                        {this.activityList()}
+                    </tbody>
+                </table>
             </div>
         )
     }
