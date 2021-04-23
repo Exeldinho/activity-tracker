@@ -8,13 +8,13 @@ import Totals from "./totals";
 
 export default class Form extends Component {
     constructor(props) {
-        super(props);
+        super(props)
 
-        this.onChangeActivityStart = this.onChangeActivityStart.bind(this);
-        this.onChangeActivityFinish = this.onChangeActivityFinish.bind(this);
-        this.onChangeDistance = this.onChangeDistance.bind(this);
-        this.onChangeActivityType = this.onChangeActivityType.bind(this);
-        this.onSubmit = this.onSubmit.bind(this);
+        this.onChangeActivityStart = this.onChangeActivityStart.bind(this)
+        this.onChangeActivityFinish = this.onChangeActivityFinish.bind(this)
+        this.onChangeDistance = this.onChangeDistance.bind(this)
+        this.onChangeActivityType = this.onChangeActivityType.bind(this)
+        this.onSubmit = this.onSubmit.bind(this)
 
         this.state = {
             activityStart: '',
@@ -26,8 +26,8 @@ export default class Form extends Component {
     }
 
         componentDidMount() {
-            this.setState ({ updateChild: false})}
-
+            this.setState ({ updateChild: false})
+        }
 
         onChangeActivityStart (date) {
             this.setState({
@@ -40,12 +40,16 @@ export default class Form extends Component {
                 activityFinish: date
             })
 
-        }  onChangeDistance (e) {
+        }
+
+        onChangeDistance (e) {
             this.setState({
                 distance: e.target.value
             })
 
-        }  onChangeActivityType (e) {
+        }
+
+        onChangeActivityType (e) {
             this.setState({
                 activityType: e.target.value
             })
@@ -70,9 +74,8 @@ export default class Form extends Component {
                         updateChild: true,
                     })
                 })
-            window.location.reload(true);
-
-        }
+            window.location.reload(true)
+          }
 
         render() {
             return (

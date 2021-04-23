@@ -12,32 +12,32 @@ const Activity = props => (
     </tr>
 )
 export function activityDetails(timeStart, timeFinish, distance) {
-    const admission = moment(timeStart, 'DD-MM-YYYY HH:mm');
-    const discharge = moment(timeFinish, 'DD-MM-YYYY HH:mm');
+    const admission = moment(timeStart, 'DD-MM-YYYY HH:mm')
+    const discharge = moment(timeFinish, 'DD-MM-YYYY HH:mm')
     const duration = (discharge.diff(admission, 'minutes'))
     return {
         activityDuration: duration,
-        activitySpeed: (distance/(duration/60)).toFixed(1),
-    };
+        activitySpeed: (distance/(duration/60)).toFixed(1)
+    }
 }
 
 function timeConvert(min) {
-        const num = min;
-        const hours = (num / 60);
-        const roundHours = Math.floor(hours);
-        const minutes = (hours - roundHours) * 60;
-        const roundMinutes = Math.round(minutes);
-        if (num >= 60 ) {
-            return +roundHours + " h " + roundMinutes + " m";
+      const num = min;
+      const hours = (num / 60);
+      const roundHours = Math.floor(hours);
+      const minutes = (hours - roundHours) * 60;
+      const roundMinutes = Math.round(minutes);
+      if (num >= 60 ) {
+          return +roundHours + " h " + roundMinutes + " m";
         }
-        return roundMinutes + " minutes";
+      return roundMinutes + " minutes";
     }
 
 export default class RecentActivities extends Component {
     constructor(props) {
-        super(props);
+        super(props)
 
-        this.state = { activities: []};
+        this.state = { activities: []}
     }
 
     componentDidMount() {
@@ -47,7 +47,7 @@ export default class RecentActivities extends Component {
             })
 
             .catch((error) => {
-                console.log(error);
+                console.log(error)
             })
     }
 
@@ -59,10 +59,10 @@ export default class RecentActivities extends Component {
                 })
 
                 .catch((error) => {
-                    console.log(error);
+                    console.log(error)
                 })
         }
-    };
+    }
 
     activityList(){
         const reverseList = [...this.state.activities].reverse()

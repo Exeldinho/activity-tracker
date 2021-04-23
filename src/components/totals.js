@@ -4,8 +4,8 @@ import axios from 'axios';
 
 export default class Totals extends Component {
     constructor(props) {
-        super(props);
-        this.state = {activities: []};
+        super(props)
+        this.state = {activities: []}
     }
 
     componentDidMount() {
@@ -14,7 +14,7 @@ export default class Totals extends Component {
                 this.setState({activities: response.data})
             })
             .catch((error) => {
-                console.log(error);
+                console.log(error)
             })
     }
 
@@ -26,15 +26,16 @@ export default class Totals extends Component {
 
                 })
                 .catch((error) => {
-                    console.log(error);
+                    console.log(error)
                 })
         }
-    };
+    }
+
     activityRecords(activityType) {
         let total = 0;
         this.state.activities.forEach(activity => {
             if (activity.activityType === activityType) {
-                total += activity.distance;
+                total += activity.distance
             }
         })
         return total

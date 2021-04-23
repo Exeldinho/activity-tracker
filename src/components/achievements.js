@@ -6,20 +6,20 @@ import {activityDetails} from "./recentActivities";
 const Activity = props => (
     <tbody>
         <tr>
-              <td colSpan="3" className="table_header">Longest {props.activity.activityType}:</td>
+           <td colSpan="3" className="table_header">Longest {props.activity.activityType}:</td>
         </tr>
         <tr>
-              <td>{moment(props.activity.activityStart).format('MMM DD')}</td>
-              <td>{props.activity.distance} km</td>
-              <td>{activityDetails(props.activity.activityStart, props.activity.activityFinish).activityDuration} m</td>
+           <td>{moment(props.activity.activityStart).format('MMM DD')}</td>
+           <td>{props.activity.distance} km</td>
+           <td>{activityDetails(props.activity.activityStart, props.activity.activityFinish).activityDuration} m</td>
         </tr>
     </tbody>
-);
+)
 
 export default class Achievements extends Component {
     constructor(props) {
         super(props);
-        this.state = {activities: []};
+        this.state = {activities: []}
     }
 
     componentDidMount() {
@@ -28,7 +28,7 @@ export default class Achievements extends Component {
                 this.setState ({activities: response.data})
             })
             .catch((error) => {
-                console.log(error);
+                console.log(error)
             })
     }
 
@@ -40,10 +40,10 @@ export default class Achievements extends Component {
 
                 })
                 .catch((error) => {
-                    console.log(error);
+                    console.log(error)
                 })
         }
-    };
+    }
 
     activityRecords(activityType) {
         let max = 0;
