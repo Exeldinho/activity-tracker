@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
-const Schema = mongoose.Schema;
+const Schema = mongoose.Schema
 
 const activitySchema = new Schema ({
     activityStart: {type: Date, required: true},
@@ -8,8 +8,7 @@ const activitySchema = new Schema ({
     distance: {type: Number, required: true},
     activityType: {type: String, required: true},
 });
-    //timestamps: true
 
-const Activity = mongoose.model('Activity', activitySchema);
+const Activity = mongoose.model('Activity', activitySchema)
 
-module.exports = Activity;
+module.exports = Activity
