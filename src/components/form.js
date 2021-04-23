@@ -25,9 +25,8 @@ export default class Form extends Component {
         }
     }
 
-
-componentDidMount() {
-        this.setState ({ updateChild: false})}
+        componentDidMount() {
+            this.setState ({ updateChild: false})}
 
 
         onChangeActivityStart (date) {
@@ -72,7 +71,6 @@ componentDidMount() {
                     })
                 })
             window.location.reload(true);
-
 
         }
 

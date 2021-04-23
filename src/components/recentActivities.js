@@ -71,7 +71,6 @@ export default class RecentActivities extends Component {
         })
     }
 
-
     render() {
         return (
             <div className="recentActivities">

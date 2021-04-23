@@ -3,7 +3,6 @@ import axios from 'axios';
 import moment from 'moment';
 import {activityDetails} from "./recentActivities";
 
-
 const Activity = props => (
     <tbody>
         <tr>
@@ -16,7 +15,6 @@ const Activity = props => (
         </tr>
     </tbody>
 );
-
 
 export default class Achievements extends Component {
     constructor(props) {
