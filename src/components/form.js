@@ -21,8 +21,8 @@ export default class Form extends Component {
             activityFinish: '',
             distance: '',
             activityType: '',
+            updateChild: ''
         }
-        this.baseState = this.state;
     }
 
 
@@ -61,7 +61,6 @@ componentDidMount() {
                 distance: this.state.distance,
                 activityType: this.state.activityType
             }
-             this.setState(this.baseState);
              axios.post('http://localhost:5000/', activity)
                 .then (res => {
                     this.setState({
