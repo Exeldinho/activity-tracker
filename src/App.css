@@ -35,7 +35,6 @@
   border: 1px #343d4f !important;
 }
 
-
 .form-group {
   font-size: 14px;
   border-width: thin;
@@ -60,6 +59,7 @@ input.form-group {
   background-color: #fdf0e9;
   margin-top: 20px;
 }
+
 .table_header {
   font-weight: bold;
 }
@@ -68,18 +68,18 @@ input.form-group {
   border-bottom: 10px solid white;
   border-radius: 5px;
   vertical-align:bottom;
-
 }
 
 .Achievements table {
   background-color: #fcecec;
   border-radius: 10px;
+  line-height: normal;
 }
 
 .totals table {
   background-color: #f1ebfd;
   border-radius: 10px;
-
+  line-height: normal;
 }
 
 
